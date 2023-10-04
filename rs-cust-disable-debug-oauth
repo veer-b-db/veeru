@@ -1,0 +1,23 @@
+#!/usr/bin/env /usr/sw/loads/currentload/unsupported/run-router-script
+#
+# Purpose:
+# To disable OAUTH debug commands to allow to see tokening coming into the broker.
+# 
+# Tested in SolOS Load:
+# 10.5.1
+#
+# Associated Ticket:
+# RT 93460
+#
+# System Impact:
+# None
+#
+#########################################################
+<%script type="cli"/>
+enable
+configure​
+no logging debug MP_AUTH
+
+<%script type="soldebug"/>
+:conn 1
+oauthHideTokensDebug
